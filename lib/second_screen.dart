@@ -4,6 +4,7 @@ import 'package:widgets_examples/custom_dropdown_button_form_field.dart';
 import 'package:widgets_examples/custom_switch_list_tile.dart';
 import 'package:widgets_examples/custom_text_button.dart';
 import 'package:widgets_examples/custom_text_form_field.dart';
+import 'package:widgets_examples/third_screen.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({super.key});
@@ -85,14 +86,37 @@ class _SecondScreenState extends State<SecondScreen> {
               const SizedBox(
                 height: 50,
               ),
-              CustomTextButton(
-                onPressed: () {
-                  print('UserName: $userName');
-                  print('Nascimento: ${birthdayController.text}');
-                  print('É Estudante: $isStudent');
-                  print('Está Trabalhando: $isWorking');
-                },
-                child: const Text('Confirmar'),
+              SizedBox(
+                width: 300,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomTextButton(
+                      onPressed: () {
+                        print('UserName: $userName');
+                        print('Nascimento: ${birthdayController.text}');
+                        print('É Estudante: $isStudent');
+                        print('Está Trabalhando: $isWorking');
+                      },
+                      sizeWidth: 100,
+                      child: const Text('Confirmar'),
+                    ),
+                    CustomTextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                const ThirdScreen(),
+                          ),
+                        );
+                      },
+                      sizeWidth: 100,
+                      backgroundColor: Colors.green,
+                      child: const Text('Próxima'),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 25,

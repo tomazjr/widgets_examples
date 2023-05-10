@@ -61,6 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {},
               child: const Text('Próxima Tela'),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Navegar Para Próxima Tela'),
+            ),
             CustomTextButton(
               onPressed: () {
                 Navigator.push(
@@ -71,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               backgroundColor: Colors.green,
+              sizeWidth: 150,
               child: const Text('Próxima Tela'),
             ),
           ],
